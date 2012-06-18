@@ -1,0 +1,81 @@
+/*============== CAROUSEL Elements ===========*/
+
+.jslideshow {
+	height:224px;
+	width:626px;
+	position:relative;
+	top: 0;
+	
+}
+.jslideshow .jslides {
+	float:left;
+	height:224px;
+	width:440px;
+	position:relative;
+	top: 0;
+	overflow: hidden;
+}
+.jslideshow .jslides li{
+	float:left;
+	height:224px;
+	width:440px;
+	position:absolute;
+	top: 0;
+}
+
+.jslideshow .jslides .carousel-image{
+	float: left;
+	position: absolute;
+}
+.jslideshow .jslides .carousel-description{
+	float: left;
+	font-size:12px;
+	padding:10px;
+	width:410px;
+	height: auto;
+	background:url(../images/transparent.png);
+	position: absolute;
+	bottom: 10px;
+	
+}
+.jslideshow .jslides .carousel-description h2{
+font-size:16px;
+display:inline;
+}
+
+.jslideshow .jtabs {
+	float:left;
+	height:224px;
+	width:184px;
+}
+.jslideshow .jtabs li {
+	background:#c6c8ca;
+	display:block;
+	float:left;
+	height:44px;
+	line-height:44px;
+	list-style-type:none;
+	width:184px;
+	border-bottom:1px solid #f3f3f3;
+}
+
+.jslideshow .jtabs li:last-child {
+	border-bottom: none;
+}
+
+.jslideshow .jtabs li a {
+	cursor:pointer;
+	display:block;
+	float:left;
+	position:relative;
+	text-decoration:none;
+	width:172px;
+	font-size:15px;
+	padding-left:12px;
+}
+.jslideshow .jtabs li.active-tab {
+	background:#082f5c;
+}
+.jslideshow .jtabs li.active-tab a{
+	color:#FFFFFF;
+}

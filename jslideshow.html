@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+    <title>JSlideshow - Simple JQuery Carousel / Slideshow with or without tabs</title>
+    <link rel="stylesheet" href="./css/core.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="./css/jslideshow.css" type="text/css" media="screen">
+    <script type="text/javascript" src="./js/jquery-1.6.2.min.js">
+</script>
+    <script type="text/javascript" src="./js/jquery-ui-1.8.16.custom.min.js">
+</script>
+    <script type="text/javascript" src="./js/jslideshow-1.0.0.js">
+</script>
+    <style type="text/css">
+body{ margin: 10px;}
+    h1{font-size: 24px; margin-bottom: 20px;}
+    p{font-size: 14px;}
+    /* clean gray
+*******************************************************************************/
+button.clean-gray {
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: linear-gradient(top, #eeeeee, #cccccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  color: #333;
+  font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  line-height: 1;
+  padding: 8px 0;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  width: 150px; }
+  button.clean-gray:hover {
+    background-color: #dddddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#bbbbbb));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: linear-gradient(top, #dddddd, #bbbbbb);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #ddd; }
+  button.clean-gray:active {
+    border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+    -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    -ms-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    -o-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; }
+    .controls{
+    border: 1px solid #d8d8d8; margin-top: 10px; padding: 10px;
+    width: 604px;
+    }
+    .controls h2{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    }
+    .container{
+    border: 1px solid #dddddd;
+    width: 624px; margin: 0 auto;
+    padding: 10px;
+    background: #f7f7f7;
+    }
+    .footer{
+    padding: 10px 0 0;
+    text-align: right;
+    font-size: 11px;
+    }
+    .download{
+    text-align: center;
+    padding: 10px 0;
+    }
+    .cc{
+    text-align: center;
+    padding: 10px 0;
+    border: solid #d8d8d8;
+    border-width: 1px 0;
+    }
+    </style>
+</head>
+
+<body>
+	<div class="container">
+    <h1>JSlideshow - Simple JQuery Carousel / Slideshow</h1>
+	<p>This jQuery carousel / slideshow is a simple, flexible jQuery plug-in designed to make rendering nice looking slideshows a breeze.</p>
+    <div class="jslideshow">
+        <ul class="jslides">
+            <li>
+                <div class="carousel-image"><img src="./images/slide1.jpg" width="440" height="224" alt="JQuery Carousel Example Image 1"></div>
+
+                <div class="carousel-description">
+                    <h2><a href="#">Slide 1</a></h2>&nbsp; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in massa ipsum. <a href="#">&raquo; Find out more</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="carousel-image"><img src="./images/slide2.jpg" width="440" height="224" alt="JQuery Carousel Example Image 2"></div>
+
+                <div class="carousel-description">
+                    <h2><a href="#">Slide 2</a></h2>&nbsp; Fusce fringilla nibh ut nibh sodales vehicula. Sed metus nunc, mattis non fermentum quis, viverra non est. <a href="#">&raquo; Find out more</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="carousel-image"><img src="./images/slide3.jpg" width="440" height="224" alt="JQuery Carousel Example Image 3"></div>
+
+                <div class="carousel-description">
+                    <h2><a href="#">Slide 3</a></h2>&nbsp; Sed lorem massa, laoreet sed viverra eu, ultrices sit amet libero. Curabitur lorem dolor, adipiscing et venenatis a, pharetra ac nisi. Nunc laoreet posuere faucibus. <a href="#">&raquo; Find out more</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="carousel-image"><img src="./images/slide4.jpg" width="440" height="224" alt="JQuery Carousel Example Image 4"></div>
+
+                <div class="carousel-description">
+                    <h2><a href="#">Slide 4</a></h2>&nbsp; Phasellus nec nunc est. Cras elit arcu, malesuada nec venenatis ac, sollicitudin in magna. <a href="#">&raquo; Find out more</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="carousel-image"><img src="./images/slide5.jpg" width="440" height="224" alt="JQuery Carousel Example Image 5"></div>
+
+                <div class="carousel-description">
+                    <h2><a href="#">Slide 5</a></h2>&nbsp; Quisque sit amet tortor eu tellus suscipit pretium. Nunc dolor mauris, sagittis ut laoreet non, vulputate ut sapien. <a href="#">&raquo; Find out more</a>
+                </div>
+            </li>
+        </ul>
+
+        <ul id="jtabs" class="jtabs">
+            <li><a href="#">Slide 1</a></li>
+
+            <li><a href="#">Slide 2</a></li>
+
+            <li><a href="#">Slide 3</a></li>
+
+            <li><a href="#">Slide 4</a></li>
+
+            <li><a href="#">Slide 5</a></li>
+        </ul>
+    </div><script type="text/javascript">
+    (function($) {
+        $(document).ready(function() { //Standand variables
+    		$( "#button" ).click(function() {
+    			$('.jslideshow').jslideshow('updateSlideshow', {
+    			'effectType' : $( "#effectTypes" ).val(),
+    			'interval' : $( "#intervalSpeed" ).val(),
+    			'animationspeed' : $( "#animationSpeed" ).val()
+    			//'slidedown': "element.slideDown(plugin.settings.animationspeed, easing);"
+   			 }); // calls the init method
+   		return false;
+    	});
+        });
+        })(jQuery);
+
+    </script>
+    <div class="controls">
+    <h2>Slideshow Controls</h2>
+    <label for="effectTypes">Effect Type</label>
+    <select name="effectTypes" id="effectTypes">
+        <option value="core_fadein">
+            Fade In (Jquery Core)
+        </option>
+
+        <option value="core_show">
+            Show (Jquery Core)
+        </option>
+
+        <option value="core_slidedown">
+            Slide Down (Jquery Core)
+        </option>
+
+        <option value="jqueryui_blind">
+            Blind (Jquery UI)
+        </option>
+
+        <option value="jqueryui_clip">
+            Clip (Jquery UI)
+        </option>
+
+        <option value="jqueryui_drop">
+            Drop (Jquery UI)
+        </option>
+        
+        <option value="jqueryui_fade">
+            Fade (Jquery UI)
+        </option>
+
+        <option value="jqueryui_fold">
+            Fold (Jquery UI)
+        </option>
+
+        <option value="jqueryui_puff">
+            Puff (Jquery UI)
+        </option>
+
+        <option value="jqueryui_slide">
+            Slide (Jquery UI)
+        </option>
+        
+        <option value="custom_animate_1">
+            Custom Animation (Jquery UI)
+        </option>
+        
+    </select> 
+    <label for="intervalSpeed">Interval Speed</label>
+    <select name="intervalSpeed" id="intervalSpeed">
+        <option value="500">
+            500ms
+        </option>
+
+        <option value="600">
+            600ms
+        </option>
+
+        <option value="700">
+            700ms
+        </option>
+
+        <option value="800">
+            800ms
+        </option>
+
+        <option value="900">
+            900ms
+        </option>
+
+        <option value="1000">
+            1000ms
+        </option>
+        <option value="1500">
+            1500ms
+        </option>
+        <option value="2000">
+            2000ms
+        </option>
+        <option value="2500">
+            2500ms
+        </option>
+        <option value="3000">
+            3000ms
+        </option>
+    </select>
+    <label for="animationSpeed">Animation Speed</label>
+        <select name="animationSpeed" id="animationSpeed">
+        <option value="200">
+            200ms
+        </option>
+
+        <option value="300">
+            300ms
+        </option>
+
+        <option value="400">
+            400ms
+        </option>
+
+        <option value="500">
+            500ms
+        </option>
+
+        <option value="600">
+            600ms
+        </option>
+
+        <option value="700">
+            700ms
+        </option>
+
+        <option value="800">
+            800ms
+        </option>
+
+        <option value="900">
+            900ms
+        </option>
+
+        <option value="1000">
+            1000ms
+        </option>
+        <option value="1500">
+            1500ms
+        </option>
+        <option value="2000">
+            2000ms
+        </option>
+        <option value="2500">
+            2500ms
+        </option>
+        <option value="3000">
+            3000ms
+        </option>
+    </select>
+    <div style="text-align: center; margin-top: 10px;">
+    <button href="#" id="button" class="clean-gray">Run Effect</button>
+	</div>
+<script type="text/javascript">
+jQuery.noConflict();
+    (function($) {
+    $(function() {
+    	$(document).ready(function() { //Standand variables
+
+    $('.jslideshow').jslideshow({
+    	'interval' : '3000',
+    	'animationspeed' : '1000',
+		'effectType' : 'core_fadein'
+    }); // calls the init method
+
+
+    });
+    });
+    })(jQuery);
+    </script>
+    </div>
+    <div class="download"><button class="clean-gray" onclick="window.location = 'http://www.jnorton.co.uk/portfolio/digital-products/jslideshow'; ">Download Now!</button></div>
+    <div class="cc"><a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">JSlideshow</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.jnorton.co.uk/portfolio/digital-products/jslideshow" property="cc:attributionName" rel="cc:attributionURL">Justin Norton</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/">Creative Commons Attribution-NoDerivs 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://www.jnorton.co.uk/portfolio/digital-products/jslideshow" rel="dct:source">www.jnorton.co.uk</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.jnorton.co.uk/contact" rel="cc:morePermissions">http://www.jnorton.co.uk/contact</a>.</div>
+    <div class="footer">&copy; Copyright 2011 - J Norton Interactive Design - <a href="http://www.jnorton.co.uk" title="Design Innovation">Design Innovation</a></div>
+    </div>
+</body>
+</html>
